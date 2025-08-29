@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     const octokit = new Octokit({ auth: token })
     try {
       const r = await octokit.repos.getContent({ owner, repo, path: 'allowed_users.csv', ref: branch })
-      const content = Buffer.from(r.data.content, 'base64').toString('utf8')
+      const content = Buffer.from(r.data.content, "base64").toString("utf8")
       res.setHeader('Content-Type','text/csv')
       res.setHeader('Content-Disposition','attachment; filename="allowed_users.csv"')
       return res.status(200).send(content)

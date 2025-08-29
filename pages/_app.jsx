@@ -6,10 +6,10 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>Monad Pocket Watch — Claim</title>
-        <meta name="description" content="Claim the limited Monad Pocket Watch — check eligibility, register and mint." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Register to mint the limited Monad Pocket Watch — follow @monad & @monadicons and 5000+ txs on Monad." />
         <meta property="og:title" content="Monad Pocket Watch — Claim" />
-        <meta property="og:description" content="Limited edition — check eligibility, register, and mint the Monad Pocket Watch." />
-        <meta property="og:image" content="/Mon_Watch_SBT.mp4" />
+        <meta property="og:description" content="Register to mint the limited Monad Pocket Watch." />
       </Head>
       <Component {...pageProps} />
     </>

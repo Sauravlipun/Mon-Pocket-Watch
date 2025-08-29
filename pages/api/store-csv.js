@@ -7,8 +7,8 @@ export default async function handler(req, res) {
     const { handle, wallet, meta } = req.body
     if (!wallet) return res.status(400).json({ error: 'wallet required' })
     const r = await appendAllowlistRow({ handle, wallet, meta })
-    res.status(200).json(r)
+    return res.status(200).json(r)
   } catch (e) {
-    res.status(500).json({ error: e.message })
+    return res.status(500).json({ error: e.message })
   }
 }

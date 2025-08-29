@@ -1,0 +1,71 @@
+/* Tailwind CSS layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------
+   Global theme overrides
+-------------------------- */
+html, body {
+  @apply bg-gradient-to-b from-black via-gray-900 to-black text-white min-h-screen;
+  @apply font-sans antialiased;
+}
+
+a {
+  @apply text-blue-400 hover:text-blue-300 transition-colors duration-200;
+}
+
+/* -------------------------
+   Custom reusable classes
+-------------------------- */
+
+/* Card container style similar to cards.monad.xyz */
+.card {
+  @apply bg-black/50 backdrop-blur-xl rounded-2xl shadow-lg border border-white/10;
+  @apply p-6 hover:shadow-2xl transition duration-300 ease-in-out;
+}
+
+/* Buttons */
+.btn {
+  @apply px-5 py-2 rounded-xl font-semibold transition duration-300;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-md;
+}
+.btn-primary:hover {
+  @apply shadow-lg scale-[1.02];
+}
+
+.btn-disabled {
+  @apply bg-gray-600 text-gray-300 cursor-not-allowed;
+}
+
+/* Input fields */
+.input {
+  @apply w-full px-4 py-2 rounded-lg bg-white/10 text-white;
+  @apply border border-white/20 focus:border-purple-400 outline-none;
+}
+
+/* Animated heading for greeting message */
+.greeting-text {
+  @apply text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Simple fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Video popup modal background */
+.video-modal-bg {
+  @apply fixed inset-0 bg-black/70 flex items-center justify-center z-50;
+}

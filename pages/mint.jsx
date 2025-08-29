@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react'
 
-export default function Mint(){
-  const [open,setOpen] = useState(false)
-  useEffect(()=>{
-    // Mirror the same 11-day window rule used on index.
-    const deadline = new Date(new Date().getTime() + 11*24*60*60*1000)
-    setOpen(new Date() > deadline ? true : false)
-  },[])
+export default function Mint() {
+  const [open, setOpen] = useState(false)
+
+  // If you want an official fixed date, set it here.
+  const OFFICIAL_DEADLINE = new Date(Date.now() + 11 * 24 * 60 * 60 * 1000)
+
+  useEffect(() => {
+    const now = new Date()
+    setOpen(now > OFFICIAL_DEADLINE)
+  }, [])
+
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
       <div className="max-w-xl text-center bg-neutral-900 p-8 rounded-2xl">
@@ -27,3 +31,4 @@ export default function Mint(){
     </div>
   )
 }
+

@@ -8,8 +8,8 @@ export default async function handler(req, res) {
     if (!handle) return res.status(400).json({ error: 'handle required' })
     if (!process.env.TWITTER_BEARER_TOKEN) return res.status(500).json({ error: 'TWITTER_BEARER_TOKEN not configured' })
 
-    const user = await getUserByUsername(handle.replace('@','').trim())
-    const ok = await followsTargets(user.id, ['monad','monadicons'])
+    const user = await getUserByUsername(handle.replace('@', '').trim())
+    const ok = await followsTargets(user.id, ['monad', 'monadicons'])
     return res.status(200).json({ followsBoth: ok })
   } catch (e) {
     return res.status(500).json({ error: e.message })
